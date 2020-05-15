@@ -23,9 +23,7 @@ public class InsertCompany {
 	      // Accessing the database 
 	      MongoDatabase database = mongo.getDatabase("myDbase2"); 
 	      System.out.println("Database "+database);
-	      
-	      
-	      
+	            
 	      
 	      // Retrieving a collection
 
@@ -55,7 +53,5 @@ public class InsertCompany {
 	collection.createIndex(Indexes.ascending("name"));
 
 	}
-	
-
 	
 }
