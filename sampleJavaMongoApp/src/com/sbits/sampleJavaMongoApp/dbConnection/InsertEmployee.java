@@ -14,7 +14,6 @@ import com.mongodb.client.MongoDatabase;
 
 public class InsertEmployee {
 
-	
 	 public static void main( String args[] ) {  
 	      
 	      // Creating a Mongo client 
@@ -29,15 +28,15 @@ public class InsertEmployee {
 	      
 	      
 	      //fetching object id from company
-ObjectId sbID= new ObjectId("5ebe2dfab3542f14ceafd233");
-ObjectId pieriandxID= new ObjectId("5ebe2dfab3542f14ceafd234");
-ObjectId persistentID= new ObjectId("5ebe2dfab3542f14ceafd235");
+         ObjectId sbID= new ObjectId("5ebe2dfab3542f14ceafd233");
+         ObjectId pieriandxID= new ObjectId("5ebe2dfab3542f14ceafd234");
+         ObjectId persistentID= new ObjectId("5ebe2dfab3542f14ceafd235");
 
 	      
 	      
 	      // Retrieving a collection
 
-	MongoCollection<Document> collection = database.getCollection("employee");
+    	MongoCollection<Document> collection = database.getCollection("employee");
 
 	Document doc1 = new Document("name","subhankari").append("email","subhankari@sb.com").append("company",sbID ).append("experience",4);
 	Document doc2 = new Document("name","latha").append("email","latha@sb.com").append("company",sbID ).append("experience",5);
