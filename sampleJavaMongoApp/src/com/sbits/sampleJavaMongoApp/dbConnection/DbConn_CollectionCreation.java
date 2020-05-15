@@ -8,8 +8,6 @@ import com.mongodb.MongoCredential;
 
 public class DbConn_CollectionCreation {
 	
-
-	   
 	   public static void main( String args[] ) {  
 	      
 	      // Creating a Mongo client 
@@ -35,7 +33,6 @@ public class DbConn_CollectionCreation {
 	      database.createCollection("employee"); 
 	      System.out.println("Collection created successfully"); 
 	      
-
 	
 	   }
 }
