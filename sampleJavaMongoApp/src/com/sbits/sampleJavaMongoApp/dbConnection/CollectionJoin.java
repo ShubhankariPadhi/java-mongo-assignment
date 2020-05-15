@@ -28,9 +28,12 @@ public class CollectionJoin {
 	      System.out.println("Database "+database);
 
 	     DBCollection  employeeCollection = database.getCollection("employee");
-	      
-    // create the pipeline operations, first with the $match
-    DBObject match = new BasicDBObject("$match",
+	  
+	   // 4. Join companies & employees. Display details of employee 'kumar'
+
+	     
+      // create the pipeline operations, first with the $match
+       DBObject match = new BasicDBObject("$match",
         new BasicDBObject("name", "latha")  );
 
     // build the $lookup operations
