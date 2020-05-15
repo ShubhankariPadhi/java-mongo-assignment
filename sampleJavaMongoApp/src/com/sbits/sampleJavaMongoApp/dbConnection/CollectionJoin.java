@@ -22,16 +22,13 @@ public class CollectionJoin {
 	      
 	      // Creating a Mongo client 
 	      MongoClient mongo = new MongoClient( "localhost" , 27017 ); 
-	   
 	      
 	      // Accessing the database 
 	      DB database = mongo.getDB("myDbase2"); 
 	      System.out.println("Database "+database);
-	      
 
 	     DBCollection  employeeCollection = database.getCollection("employee");
 	      
-	
     // create the pipeline operations, first with the $match
     DBObject match = new BasicDBObject("$match",
         new BasicDBObject("name", "latha")  );
@@ -60,8 +57,5 @@ public class CollectionJoin {
     }
     
     
-	
-	
-
 }
 }
