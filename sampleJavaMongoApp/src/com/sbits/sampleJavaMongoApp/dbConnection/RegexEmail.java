@@ -1,20 +1,12 @@
 package com.sbits.sampleJavaMongoApp.dbConnection;
 
-import java.util.Arrays;
 import java.util.Iterator;
-
 import org.bson.Document;
-
 import com.mongodb.MongoClient;
-import com.mongodb.client.AggregateIterable;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.Accumulators;
-import com.mongodb.client.model.Aggregates;
-import com.mongodb.client.model.Projections;
 import com.mongodb.client.model.Sorts;
-import com.mongodb.operation.OrderBy;
 
 public class RegexEmail {
 
