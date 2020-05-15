@@ -1,17 +1,9 @@
 package com.sbits.sampleJavaMongoApp.dbConnection;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.List;
-
 import org.bson.Document;
-
-import com.mongodb.AggregationOutput;
 import com.mongodb.BasicDBObject;
-import com.mongodb.DBCursor;
-import com.mongodb.DBObject;
-import com.mongodb.DBRef;
 import com.mongodb.MongoClient;
 import com.mongodb.client.AggregateIterable;
 import com.mongodb.client.FindIterable;
@@ -39,20 +31,20 @@ public class Task {
 	      MongoCollection<Document> employeeCollection = database.getCollection("employee");
 	      
 	      
-
+	 //  1. Count no of companies   
 	 Long count=companyCollection.count();
-	 
 	 System.out.println("number of companies : "+count);
 	 
-	 
-    count=employeeCollection.count();
+	
+	 // 2. count no of employees	  
+     count=employeeCollection.count();
 	 System.out.println("number of employees : "+count);
 	 
-
-	 
+	// 3. Find companies which are less than 10 years
 	 BasicDBObject whereQuery = new BasicDBObject();
 	 whereQuery.put("since", new BasicDBObject("$lt", 10));
 	 FindIterable<Document> iterDoc = companyCollection.find(whereQuery);
+	 
 	 int i = 1;
 		// Getting the iterator
 		Iterator it = iterDoc.iterator();
@@ -64,15 +56,13 @@ public class Task {
 		
 		
 		
-		
+	//  5. Calculate average experience of employee by company wise
 		 AggregateIterable<Document> documents
          = employeeCollection.aggregate(
                  Arrays.asList(
                          Aggregates.group("$company",
-                                 Accumulators.avg("averageExperience", "$experience"))      ));
-	 
-		
-		 
+                                 Accumulators.avg("averageExperience", "$experience")) ));
+	 		 
 		  i = 1;
 			// Getting the iterator
 		  it = documents.iterator();
@@ -81,13 +71,6 @@ public class Task {
 			i++;
 			}
 
-			
-			
-			
-			
-			
-			
-				
 	 }
 	
 }
